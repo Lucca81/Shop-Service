@@ -1,3 +1,22 @@
 spring:
   application:
-    name: shopservice
+    name: shop-service
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/shop_service_db
+
+    redis:
+      host: localhost
+      port: 6379
+
+      password: ${REDIS_PASSWORD:sa}
+
+  cache:
+    type: redis
+    redis:
+      time-to-live: 1m
+
+shop:
+  client:
+    platzi: ${PLATZI_API_URL:https://api.escuelajs.co/api/v1}
